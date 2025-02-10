@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Open Source License Detector</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Basic reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body background and overall styling */
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(white, black); /* Color gradient background */
+            color: #333;
+            text-align: center; /* Center all text */
+        }
+
+        /* Container for centering the content */
+        .container {
+            background-color: white;
+            padding: 51px;
+            border-radius: 33px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            width: 80%;
+            max-width: 697px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Header styling */
+        header {
+            background-color: red;
+            color: white;
+            padding: 15px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            width: 100%;
+            text-align: center; /* Center header text */
+        }
+
+        header h1 {
+            font-size: 24px;
+        }
+
+        /* Content styling */
+        .content {
+            font-size: 16px;
+            width: 100%;
+        }
+
+        /* Styling for the file input */
+        input[type="file"] {
+            padding: 10px;
+            margin-top: 20px;
+            font-size: 16px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            width: 100%; /* Ensure it takes up full width */
+            max-width: 300px; /* Limiting max width */
+            text-align: center;
+        }
+
+        /* Button styling */
+        button {
+            padding: 10px 20px;
+            background-color: #00b3b3;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+
+        button:hover {
+            background-color: #ff66b2;
+        }
+
+        /* Result section styling */
+        #result {
+            margin-top: 20px;
+        }
+
+        #licenseType {
+            font-weight: bold;
+            color: #00b3b3;
+            text-align: center;
+            font-size: 1.5em; /* Larger text for better visibility */
+        }
+
+        #loading {
+            display: none;
+            font-size: 1.2em;
+            color: #ff6600;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Welcome to Open Source License Detector</h1>
+        </header>
+        <div class="content">
+            <p>Upload a .txt or .md file to detect the open-source license.</p>
+            <input type="file" id="fileInput" accept=".txt, .md, .LICENSE">
+            <button onclick="detectLicense()">Detect License</button>
+            <div id="loading">Loading...</div>
+            <div id="result">
+                <h2>License Type:</h2>
+                <p id="licenseType">No file selected yet.</p>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
